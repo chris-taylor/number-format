@@ -58,7 +58,7 @@ data DecimalFormat = NoFormat | DecimalFormat {
 
 formatNumber :: Decimal a => NumberFormat -> a -> String
 formatNumber nf x | x < 0     = _negPrefix nf ++ fmt (abs x) ++ _negSuffix nf
-                   | otherwise = _posPrefix nf ++ fmt x ++ _posSuffix nf
+                  | otherwise = _posPrefix nf ++ fmt x ++ _posSuffix nf
   where
     fmt x = formatIntPart (_intPart nf) ip ++ formatFracPart (_fracPart nf) fp
       where
